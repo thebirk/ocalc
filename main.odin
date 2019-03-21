@@ -9,6 +9,8 @@ import "core:strings"
 import "core:strconv"
 import "core:unicode/utf8"
 
+// Don't mind me
+
 _string_buffer: [4096]u8;
 
 when ODIN_OS == "windows" {
