@@ -655,7 +655,6 @@ eval_expr :: proc(state: ^State, expr: ^Expr) -> Value {
 		//fmt.printf("ident: '%v'\n", e.name);
 		v, found := get_variable(state, e.name);
 		if found {
-			// This whole expression is kinda useless
 			return v;
 		} else {
 			//fmt.printf("v: '%v'\n", e.name);
@@ -712,7 +711,7 @@ eval_expr :: proc(state: ^State, expr: ^Expr) -> Value {
 		case:
 			//fmt.printf("    error: cannot call %v\n", fn);
 			//return 0;
-			return Value_Error{msg = fmt.aprintf("error: cannot call %v", fn)};
+			return Value_Error{msg = fmt.aprintf("error: %v is not a function", fn)};
 		}
 	}
 

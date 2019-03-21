@@ -8,6 +8,8 @@ Multi_Arena_Allocator :: struct {
 	arenas: [dynamic][]byte,
 	unused_arenas: [dynamic][]byte,
 	current_offset: int,
+
+	backing_allocator: Allocator,
 }
 
 multi_arena_allocator :: proc(arena: ^Multi_Arena_Allocator) -> Allocator {
